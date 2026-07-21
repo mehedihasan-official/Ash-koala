@@ -8,6 +8,10 @@ import type { NextAuthConfig } from "next-auth";
  * auth.ts and is used everywhere else (API routes, server components).
  */
 export const authConfig = {
+  secret:
+    process.env.AUTH_SECRET ??
+    process.env.NEXTAUTH_SECRET ??
+    "dev-secret-change-me",
   session: { strategy: "jwt" },
   pages: {
     signIn: "/login",

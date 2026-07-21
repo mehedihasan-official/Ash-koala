@@ -18,7 +18,7 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full bg-sand-light transition-shadow ${
+      className={`md-sticky top-0 z-40 w-full bg-sand-light transition-shadow ${
         scrolled ? "shadow-[0_1px_0_0_var(--color-line)]" : ""
       }`}
     >
@@ -54,7 +54,7 @@ export default function SiteHeader() {
             Rent Your Timeshare
           </Link>
           <Link
-            href="/login"
+            href="#"
             className="text-sm font-medium text-ink/75 hover:text-ink transition"
           >
             Owner sign in
