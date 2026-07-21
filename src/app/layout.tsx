@@ -1,7 +1,7 @@
+import Providers from "@/components/Providers";
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
-import Providers from "@/components/Providers";
 
 const fraunces = Fraunces({
   variable: "--font-display",
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Ash's Resorts — Timeshare Rental Income",
   description:
     "Rent Ash's timeshare resort weeks direct from the owner. Verified, guaranteed, hassle-free.",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

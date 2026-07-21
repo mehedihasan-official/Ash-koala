@@ -18,7 +18,7 @@ export default function SiteHeader() {
 
   return (
     <header
-      className={`md-sticky top-0 z-40 w-full bg-sand-light transition-shadow ${
+      className={`hidden md-block md-sticky top-0 z-40 w-full bg-sand-light transition-shadow ${
         scrolled ? "shadow-[0_1px_0_0_var(--color-line)]" : ""
       }`}
     >
