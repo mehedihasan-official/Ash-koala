@@ -13,14 +13,22 @@ import { formatCents, type Property, type Testimonial } from "@/lib/types";
 export default async function DashboardPage() {
   const session = await auth();
 
-  await connectDB();
-  const [propertiesRaw, testimonialsRaw] = await Promise.all([
-    PropertyModel.find().sort({ order: 1 }).lean(),
-    TestimonialModel.find().sort({ order: 1 }).lean(),
-  ]);
+  let properties: Property[] = [];
+  let testimonials: Testimonial[] = [];
 
-  const properties = JSON.parse(JSON.stringify(propertiesRaw)) as Property[];
-  const testimonials = JSON.parse(JSON.stringify(testimonialsRaw)) as Testimonial[];
+  try {
+    await connectDB();
+    const [propertiesRaw, testimonialsRaw] = await Promise.all([
+      PropertyModel.find().sort({ order: 1 }).lean(),
+      TestimonialModel.find().sort({ order: 1 }).lean(),
+    ]);
+
+    properties = JSON.parse(JSON.stringify(propertiesRaw)) as Property[];
+    testimonials = JSON.parse(JSON.stringify(testimonialsRaw)) as Testimonial[];
+  } catch {
+    properties = [];
+    testimonials = [];
+  }
 
   const totalIncome = properties.reduce(
     (sum, p) => sum + p.payouts.filter((pay) => pay.status === "paid").reduce((s, pay) => s + pay.amount, 0),

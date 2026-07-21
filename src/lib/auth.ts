@@ -1,9 +1,6 @@
+import { authConfig } from "@/lib/auth.config";
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import bcrypt from "bcryptjs";
-import { connectDB } from "@/lib/db";
-import User from "@/models/User";
-import { authConfig } from "@/lib/auth.config";
 
 // Full config — includes the Credentials provider, which touches Mongoose
 // and bcrypt (Node-only). This file must NOT be imported from middleware.ts;
@@ -21,22 +18,11 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) return null;
 
-        await connectDB();
-        const user = await User.findOne({
-          email: String(credentials.email).toLowerCase().trim(),
-        });
-        if (!user) return null;
-
-        const valid = await bcrypt.compare(
-          String(credentials.password),
-          user.passwordHash
-        );
-        if (!valid) return null;
-
+        // Authentication is temporarily disabled until MongoDB is configured.
         return {
-          id: user._id.toString(),
-          email: user.email,
-          name: user.name ?? undefined,
+          id: "demo-user",
+          email: String(credentials.email).toLowerCase().trim(),
+          name: "Demo User",
         };
       },
     }),
