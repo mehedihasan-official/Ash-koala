@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Fraunces, Inter } from "next/font/google";
+import "./globals.css";
+import Providers from "@/components/Providers";
+
+const fraunces = Fraunces({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+});
+
+const inter = Inter({
+  variable: "--font-body",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+export const metadata: Metadata = {
+  title: "Ash's Resorts — Timeshare Rental Income",
+  description:
+    "Rent Ash's timeshare resort weeks direct from the owner. Verified, guaranteed, hassle-free.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col bg-sand text-ink">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}

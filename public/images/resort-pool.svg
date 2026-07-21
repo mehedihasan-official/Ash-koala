@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="skyP" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#e8f4f0"/>
+        <stop offset="100%" stop-color="#cfe8e0"/>
+    </linearGradient>
+    <linearGradient id="waterP" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#7fd6cd"/>
+        <stop offset="100%" stop-color="#2f8f87"/>
+    </linearGradient></defs>
+<rect width="800" height="600" fill="url(#skyP)"/>
+    <rect y="90.0" width="800" height="210.0" fill="#f0ebe0"/>
+    <rect x="40.0" y="108.0" width="720.0" height="36.0" fill="#ddd4c2"/>
+    <rect x="80.0" y="168.00000000000003" width="60" height="90" fill="#e8825a" opacity="0.5"/>
+    <rect x="240.0" y="168.00000000000003" width="60" height="90" fill="#c9a15c" opacity="0.5"/>
+    <rect x="440.00000000000006" y="168.00000000000003" width="60" height="90" fill="#e8825a" opacity="0.5"/>
+    <rect x="640.0" y="168.00000000000003" width="60" height="90" fill="#c9a15c" opacity="0.5"/>
+    <rect y="300.0" width="800" height="300.0" fill="url(#waterP)"/>
+    <ellipse cx="400.0" cy="300.0" rx="336.0" ry="18" fill="#eae0cc"/>
+</svg>

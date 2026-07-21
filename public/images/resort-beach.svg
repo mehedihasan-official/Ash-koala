@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="skyB" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#fde9d0"/>
+        <stop offset="55%" stop-color="#f7c9a0"/>
+        <stop offset="100%" stop-color="#e8825a"/>
+    </linearGradient>
+    <linearGradient id="waterB" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3fa39e"/>
+        <stop offset="100%" stop-color="#1b4b4a"/>
+    </linearGradient></defs>
+<rect width="800" height="600" fill="url(#skyB)"/>
+    <circle cx="624.0" cy="168.00000000000003" r="70" fill="#fff6e5" opacity="0.85"/>
+    <rect y="330.0" width="800" height="270.0" fill="url(#waterB)"/>
+    <path d="M0,330.0 Q 200.0,300.0 400.0,330.0 T 800,330.0 V360.0 H0 Z" fill="#eae0cc"/>
+    <g opacity="0.9">
+      <path d="M120,330.0 C110,210.0 60,180.0 40,252.0" stroke="#123534" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M120,330.0 C130,192.0 90,132.0 70,180.0" stroke="#123534" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <path d="M120,330.0 C140,210.0 190,192.0 200,264.0" stroke="#123534" stroke-width="10" fill="none" stroke-linecap="round"/>
+    </g>
+</svg>

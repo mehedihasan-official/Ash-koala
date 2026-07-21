@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  /* Design tokens — see design plan: hospitality/timeshare income platform */
+  --color-teal: #1b4b4a;      /* primary — trust, resort-pool */
+  --color-teal-dark: #123534;
+  --color-sand: #f0ebe0;      /* background */
+  --color-sand-light: #f8f5ee;
+  --color-ink: #1a1f1e;       /* text */
+  --color-clay: #e8825a;      /* CTA / energy accent */
+  --color-clay-dark: #d16b45;
+  --color-gold: #c9a15c;      /* payout / income highlight */
+  --color-line: #ddd4c2;      /* hairline borders on sand */
+}
+
+@theme inline {
+  --color-teal: var(--color-teal);
+  --color-teal-dark: var(--color-teal-dark);
+  --color-sand: var(--color-sand);
+  --color-sand-light: var(--color-sand-light);
+  --color-ink: var(--color-ink);
+  --color-clay: var(--color-clay);
+  --color-clay-dark: var(--color-clay-dark);
+  --color-gold: var(--color-gold);
+  --color-line: var(--color-line);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+/* Perforated / torn-ticket edge used on payout stub cards (design signature) */
+.stub-edge {
+  position: relative;
+}
+.stub-edge::before {
+  content: "";
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: 0;
+  height: 0;
+  border-top: 2px dashed var(--color-line);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal-up 0.6s ease-out both;
+  }
+  @keyframes reveal-up {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: none;
+  }
+}

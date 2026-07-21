@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+<defs><linearGradient id="skyV" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2c3a52"/>
+        <stop offset="100%" stop-color="#5a4a6b"/>
+    </linearGradient></defs>
+<rect width="800" height="600" fill="url(#skyV)"/>
+    <circle cx="144.0" cy="120.0" r="4" fill="#f0ebe0"/>
+    <circle cx="280.0" cy="84.00000000000001" r="3" fill="#f0ebe0"/>
+    <circle cx="480.0" cy="108.0" r="3" fill="#f0ebe0"/>
+    <circle cx="640.0" cy="72.0" r="4" fill="#f0ebe0"/>
+    <polygon points="0,372.0 400.0,180.0 800,372.0" fill="#1a1f1e"/>
+    <rect x="120.0" y="330.0" width="60" height="80" fill="#3a2f28"/>
+    <rect x="320.0" y="300.0" width="70" height="95" fill="#2e251f"/>
+    <rect x="520.0" y="336.00000000000006" width="55" height="75" fill="#3a2f28"/>
+    <rect x="136.0" y="360.0" width="12" height="14" fill="#e8825a" opacity="0.9"/>
+    <rect x="344.0" y="336.00000000000006" width="12" height="14" fill="#c9a15c" opacity="0.9"/>
+    <rect x="544.0" y="360.0" width="12" height="14" fill="#e8825a" opacity="0.9"/>
+</svg>
