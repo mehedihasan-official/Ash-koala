@@ -1,15 +1,15 @@
 import SiteHeader from "@/components/SiteHeader";
 import MobileBottomNav from "@/components/MobileBottomNav";
-import Hero from "@/app/home/Hero";
-import ListingCarousel from "@/app/home/ListingCarousel";
-import WhatIsSection from "@/app/home/WhatIsSection";
-import TrustSection from "@/app/home/TrustSection";
-import FeaturedDestinations from "@/app/home/FeaturedDestinations";
-import UpcomingEvents from "@/app/home/UpcomingEvents";
-import ExperienceIcons from "@/app/home/ExperienceIcons";
-import VacationersGuide from "@/app/home/VacationersGuide";
-import NewsletterBand from "@/app/home/NewsletterBand";
-import SiteFooter from "@/app/home/SiteFooter";
+import Hero from "@/app/pages/home/Hero";
+import ListingCarousel from "@/app/pages/home/ListingCarousel";
+import WhatIsSection from "@/app/pages/home/WhatIsSection";
+import TrustSection from "@/app/pages/home/TrustSection";
+import FeaturedDestinations from "@/app/pages/home/FeaturedDestinations";
+import UpcomingEvents from "@/app/pages/home/UpcomingEvents";
+import ExperienceIcons from "@/app/pages/home/ExperienceIcons";
+import VacationersGuide from "@/app/pages/home/VacationersGuide";
+import NewsletterBand from "@/app/pages/home/NewsletterBand";
+import SiteFooter from "@/app/pages/home/SiteFooter";
 import {
   exclusiveDeals,
   featuredStays,
