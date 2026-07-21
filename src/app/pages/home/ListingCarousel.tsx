@@ -23,7 +23,7 @@ export default function ListingCarousel({
   }
 
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
+    <section className="mx-auto bg-gradient-to-r from-[#FBFBD4] to-[#D5F5F6] max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
       <a href="#" className="inline-flex items-center gap-1 text-sm font-semibold text-teal hover:text-teal-dark transition mb-2">
         {eyebrow}
         <ChevronRight size={15} />
