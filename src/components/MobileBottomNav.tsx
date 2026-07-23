@@ -6,7 +6,7 @@ import { Search, Heart, User } from "lucide-react";
 const items = [
   { label: "Explore", icon: Search, href: "/", active: true },
   { label: "Wishlist", icon: Heart, href: "#", active: false },
-  { label: "Login", icon: User, href: "/#", active: false },
+  { label: "Login", icon: User, href: "/login", active: false },
 ];
 
 export default function MobileBottomNav() {

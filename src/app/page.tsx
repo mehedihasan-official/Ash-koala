@@ -33,7 +33,7 @@ export default function HomePage() {
 
         <TrustSection />
 
-        {/* <ListingCarousel
+         <ListingCarousel
           eyebrow="Featured Listings"
           heading="Featured stays from verified members"
           listings={featuredStays}
@@ -41,6 +41,8 @@ export default function HomePage() {
         />
 
         <FeaturedDestinations />
+
+        {/*
 
         <UpcomingEvents />
 
