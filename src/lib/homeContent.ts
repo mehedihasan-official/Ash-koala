@@ -146,6 +146,8 @@ export const testimonials = [
     id: "t-1",
     name: "Janice M.",
     avatar: "/images/avatar-1.svg",
+    timeAgo: "2 days ago",
+    headline: "Helpful and easy to work with",
     quote:
       "The people here are always patient and willing to answer all my questions.",
   },
@@ -153,19 +155,28 @@ export const testimonials = [
     id: "t-2",
     name: "Thomas C.",
     avatar: "/images/avatar-2.svg",
-    quote: "Staff is so friendly and helpful. They have my best interest at heart.",
+    timeAgo: "1 week ago",
+    headline: "A smooth experience from start to finish",
+    quote:
+      "Staff is so friendly and helpful. They have my best interest at heart.",
   },
   {
     id: "t-3",
     name: "Laurie K.",
     avatar: "/images/avatar-3.svg",
-    quote: "Easy to do business. Very easy to post a new listing, good reminders too.",
+    timeAgo: "3 weeks ago",
+    headline: "Simple process and great communication",
+    quote:
+      "Easy to do business. Very easy to post a new listing, good reminders too.",
   },
   {
     id: "t-4",
     name: "Robert D.",
     avatar: "/images/avatar-4.svg",
-    quote: "Service sets this apart. I've had several listings and the support is great.",
+    timeAgo: "1 month ago",
+    headline: "Support really makes the difference",
+    quote:
+      "Service sets this apart. I've had several listings and the support is great.",
   },
 ];
 
@@ -275,6 +286,13 @@ export const footerLinkColumns = [
 
 export const topDestinationLinks = [
   ["Disney World", "Maui", "Florida", "Hawaii", "Aruba", "Orlando"],
-  ["Las Vegas", "Myrtle Beach", "Oahu", "California", "New York City", "Hilton Head"],
+  [
+    "Las Vegas",
+    "Myrtle Beach",
+    "Oahu",
+    "California",
+    "New York City",
+    "Hilton Head",
+  ],
   ["Panama City Beach", "Clearwater Beach", "Colorado"],
 ];

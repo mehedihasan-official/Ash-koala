@@ -1,5 +1,6 @@
 // ResortCard.tsx
 
+import Image from "next/image";
 import { Heart, Star } from "lucide-react";
 import type { ListingCard } from "@/lib/homeContent";
 
@@ -18,10 +19,12 @@ export default function ResortCard({
   return (
     <div className="group shrink-0 w-[85vw] xs:w-[320px] sm:w-[300px] lg:w-[320px] snap-start">
       <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-teal-dark">
-        <img
+        <Image
+          fill
           src={listing.image}
           alt={listing.resortName}
-          className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 85vw, (max-width: 1024px) 300px, 320px"
+          className="object-cover transition duration-300 group-hover:scale-105"
         />
 
         {/* "TOP 21" style ribbon badge */}

@@ -1,5 +1,6 @@
 import type { Property } from "@/lib/types";
 import { formatCents } from "@/lib/types";
+import Image from "next/image";
 
 const statusStyles: Record<string, string> = {
   paid: "bg-teal/10 text-teal-dark",
@@ -17,11 +18,12 @@ export default function ResortStub({ property }: { property: Property }) {
       {/* Image / header */}
       <div className="relative h-40 bg-teal-dark">
         {property.images[0] ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
+            fill
             src={property.images[0]}
             alt={property.name}
-            className="h-full w-full object-cover"
+            sizes="(max-width: 640px) 100vw, 320px"
+            className="object-cover"
           />
         ) : (
           <div className="h-full w-full flex items-center justify-center">
@@ -41,7 +43,9 @@ export default function ResortStub({ property }: { property: Property }) {
         <p className="text-xs font-semibold tracking-[0.14em] uppercase text-clay-dark mb-1">
           {property.brand || "Resort"}
         </p>
-        <h3 className="font-display text-xl text-teal-dark mb-1">{property.name}</h3>
+        <h3 className="font-display text-xl text-teal-dark mb-1">
+          {property.name}
+        </h3>
         <p className="text-sm text-ink/60 mb-4">
           {property.location}
           {property.unitType ? ` · ${property.unitType}` : ""}
@@ -59,7 +63,9 @@ export default function ResortStub({ property }: { property: Property }) {
 
         <ul className="flex flex-col gap-3">
           {property.payouts.length === 0 && (
-            <li className="text-sm text-ink/40 italic">No payouts recorded yet.</li>
+            <li className="text-sm text-ink/40 italic">
+              No payouts recorded yet.
+            </li>
           )}
           {property.payouts.map((payout) => (
             <li
@@ -69,7 +75,8 @@ export default function ResortStub({ property }: { property: Property }) {
               <div>
                 <p className="font-medium text-ink/80">{payout.label}</p>
                 <p className="text-ink/45 text-xs">
-                  {payout.guestNights} night{payout.guestNights === 1 ? "" : "s"}
+                  {payout.guestNights} night
+                  {payout.guestNights === 1 ? "" : "s"}
                 </p>
               </div>
               <div className="flex items-center gap-2">

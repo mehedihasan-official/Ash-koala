@@ -1,5 +1,6 @@
-import { ChevronRight } from "lucide-react";
 import { guideArticles } from "@/lib/homeContent";
+import { ChevronRight } from "lucide-react";
+import Image from "next/image";
 
 export default function VacationersGuide() {
   return (
@@ -18,11 +19,13 @@ export default function VacationersGuide() {
       <div className="grid gap-6 sm:grid-cols-3">
         {guideArticles.map((article) => (
           <a key={article.id} href="#" className="group block">
-            <div className="h-44 rounded-2xl overflow-hidden mb-3">
-              <img
+            <div className="relative h-44 rounded-2xl overflow-hidden mb-3">
+              <Image
+                fill
                 src={article.image}
                 alt=""
-                className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, 33vw"
+                className="object-cover transition duration-300 group-hover:scale-105"
               />
             </div>
             <h3 className="font-medium text-ink group-hover:text-teal transition mb-1.5 leading-snug">

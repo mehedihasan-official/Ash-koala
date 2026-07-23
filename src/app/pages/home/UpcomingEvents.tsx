@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import { upcomingEvents } from "@/lib/homeContent";
 
@@ -22,10 +23,12 @@ export default function UpcomingEvents() {
             href="#"
             className="group relative h-64 rounded-2xl overflow-hidden block"
           >
-            <img
+            <Image
+              fill
               src={event.image}
               alt=""
-              className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+              sizes="(max-width: 640px) 100vw, 33vw"
+              className="object-cover transition duration-300 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/15 to-transparent" />
             <span className="absolute top-3 right-3 rounded-md bg-sand-light/95 px-2 py-1 text-xs font-semibold text-teal-dark">
