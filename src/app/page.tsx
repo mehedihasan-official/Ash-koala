@@ -42,11 +42,11 @@ export default function HomePage() {
 
         <FeaturedDestinations />
 
-        {/*
+      
 
         <UpcomingEvents />
 
-        <ExperienceIcons /> */}
+        <ExperienceIcons /> 
 
         {/* <VacationersGuide />
 
