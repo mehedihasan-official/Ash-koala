@@ -81,9 +81,9 @@ export const featuredStays: ListingCard[] = [
   },
   {
     id: "fs-4",
-    image: "/images/resort-mountain.svg",
-    location: "Sevierville, Tennessee ",
-    resortName: "Club Wyndham Smoky Mountains",
+    image: "/images/featured4.webp",
+    location: "Missouri, Branson",
+    resortName: "Branson Nantucket",
     dates: "Dec 18 – Dec 25, 2026",
     price: 325,
     host: { name: "Pat", tier: "Gold VIP Member" },
@@ -91,27 +91,32 @@ export const featuredStays: ListingCard[] = [
 ];
 
 export const destinations = [
-  { id: "d-1", name: "Orlando", image: "/images/resort-golf.svg" },
-  { id: "d-2", name: "Las Vegas", image: "/images/resort-desert.svg" },
-  { id: "d-3", name: "Maui", image: "/images/resort-lagoon.svg" },
+  { id: "d-1", name: "Orlando", image: "/images/destinations2.webp" },
+  {
+    id: "d-2",
+    name: "New York City",
+    image: "/images/destinations-new-yok.webp",
+  },
+  { id: "d-3", name: "Las Vegas", image: "/images/destinations1.webp" },
+  { id: "d-4", name: "Maui", image: "/images/destinations3.webp" },
 ];
 
 export const upcomingEvents = [
   {
     id: "ue-1",
-    image: "/images/resort-village.svg",
+    image: "/images/outside-lands.jpg",
     title: "Outside Lands Festival Stays — Vacation Rentals Near the Park",
     price: 300,
   },
   {
     id: "ue-2",
-    image: "/images/resort-desert.svg",
+    image: "/images/formula1.jpg",
     title: "Formula 1 US Grand Prix — Stay Close to the High-Speed Action",
     price: 85,
   },
   {
     id: "ue-3",
-    image: "/images/resort-golf.svg",
+    image: "/images/game.jpg",
     title: "Game, Set, Stay — Timeshare Rentals for the US Open",
     price: 150,
   },
