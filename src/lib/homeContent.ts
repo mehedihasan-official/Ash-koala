@@ -16,7 +16,7 @@ export interface ListingCard {
 export const exclusiveDeals: ListingCard[] = [
   {
     id: "ed-1",
-    image: "/images/resort-beach.svg",
+    image: "/images/rsort-img1.webp",
     location: "Noord, Aruba",
     resortName: "Sandbar Surf Club",
     rating: 4.6,
@@ -25,7 +25,7 @@ export const exclusiveDeals: ListingCard[] = [
   },
   {
     id: "ed-2",
-    image: "/images/resort-lagoon.svg",
+    image: "/images/rsort-img2.webp",
     location: "Noord, Aruba",
     resortName: "Palmwave Ocean Club",
     rating: 4.5,
@@ -34,7 +34,7 @@ export const exclusiveDeals: ListingCard[] = [
   },
   {
     id: "ed-3",
-    image: "/images/resort-pool.svg",
+    image: "/images/rsort-img3.webp",
     location: "Lake Buena Vista, Florida",
     resortName: "Bonnet Creek Retreat",
     rating: 4.5,
@@ -43,7 +43,7 @@ export const exclusiveDeals: ListingCard[] = [
   },
   {
     id: "ed-4",
-    image: "/images/resort-golf.svg",
+    image: "/images/rsort-img4.webp",
     location: "Williamsburg, Virginia",
     resortName: "Kingsgate Villas",
     rating: 4.3,
@@ -54,18 +54,18 @@ export const exclusiveDeals: ListingCard[] = [
 export const featuredStays: ListingCard[] = [
   {
     id: "fs-1",
-    image: "/images/resort-beach.svg",
-    location: "Kapolei, Hawaii",
-    resortName: "Ko Olina Beach Club",
+    image: "/images/rsort-img5.webp",
+    location: "Noord, Aruba",
+    resortName: "Marriott's Aruba Surf Club",
     dates: "Dec 12 – Dec 19, 2026",
     price: 724,
     host: { name: "Christine", tier: "Platinum VIP Member" },
   },
   {
     id: "fs-2",
-    image: "/images/resort-lagoon.svg",
-    location: "Kapolei, Hawaii",
-    resortName: "Ko Olina Beach Club",
+    image: "/images/rsort-img6.webp",
+    location: "Noord, Aruba, ",
+    resortName: "Marriott's Aruba Ocean Club",
     dates: "Mar 7 – Mar 14, 2027",
     price: 818,
     host: { name: "Dennis", tier: "Gold VIP Member" },
@@ -73,8 +73,8 @@ export const featuredStays: ListingCard[] = [
   {
     id: "fs-3",
     image: "/images/resort-golf.svg",
-    location: "Orlando, Florida",
-    resortName: "Vistana Resort Villas",
+    location: "Lake Buena Vista, ",
+    resortName: "Club Wyndham Bonnet Creek",
     dates: "Dec 20 – Dec 27, 2026",
     price: 279,
     host: { name: "Melvin", tier: "Platinum VIP Member" },
@@ -82,8 +82,8 @@ export const featuredStays: ListingCard[] = [
   {
     id: "fs-4",
     image: "/images/resort-mountain.svg",
-    location: "Breckenridge, Colorado",
-    resortName: "Gold Point Resort",
+    location: "Sevierville, Tennessee ",
+    resortName: "Club Wyndham Smoky Mountains",
     dates: "Dec 18 – Dec 25, 2026",
     price: 325,
     host: { name: "Pat", tier: "Gold VIP Member" },
