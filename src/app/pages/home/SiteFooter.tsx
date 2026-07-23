@@ -6,7 +6,7 @@ import {
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-sand border-t border-line pb-20 lg:pb-0">
+    <footer className="bg-[#F4F4F4] border-t border-line pb-20 lg:pb-0">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-16">
         {/* Resort brand link groups */}
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 mb-14">
