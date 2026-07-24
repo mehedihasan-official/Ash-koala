@@ -1,4 +1,3 @@
-import Providers from "@/components/Providers";
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
 import "./globals.css";
@@ -35,9 +34,7 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col text-ink">
-        <Providers>{children}</Providers>
-      </body>
+      <body className="min-h-full flex flex-col text-ink">{children}</body>
     </html>
   );
 }

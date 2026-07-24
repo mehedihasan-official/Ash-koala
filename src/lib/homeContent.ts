@@ -125,24 +125,24 @@ export const upcomingEvents = [
 export const guideArticles = [
   {
     id: "ga-1",
-    image: "/images/resort-beach.svg",
-    title: "Rent a Timeshare for the Whole Family",
+    image: "/images/Timeshare.png",
+    title: "Timeshares Evolve for Millennials",
     excerpt:
-      "A timeshare can be a great lifestyle investment for travelers who love the comfort of a home away from home on vacation.",
+      "Timeshares are evolving for millennials with flexible memberships, short-term stays, and digital booking options. Discover how modern timeshares fit today’s travelers.",
   },
   {
     id: "ga-2",
-    image: "/images/resort-village.svg",
-    title: "RCI vs Interval International — Pros, Cons & Key Differences",
+    image: "/images/koala's-top-21.png",
+    title: "KOALA’s Top 21!",
     excerpt:
-      "Compare exchange value, fees, resort networks, and flexibility across the two major exchange programs.",
+      "Welcome to ‘KOALA’s Top 21!’, a curated list of our favorite and most popular timeshare resorts! Our team reviews the best timeshare resorts & vacation clubs around the world and chooses our favorites –  in order – for you.",
   },
   {
     id: "ga-3",
-    image: "/images/resort-lagoon.svg",
-    title: "Timeshares Evolve for Modern Travelers",
+    image: "/images/why-timeshare.png",
+    title: "Why Timeshare Rentals Are Better For Families Than Airbnb",
     excerpt:
-      "Flexible memberships, short-term stays, and digital booking are reshaping how people use timeshares today.",
+      "When it comes to family vacations, safety and reliability are of the utmost importance. That is something we’ve learned over the years, taking our kids on a variety of different vacations and sharing our experiences as the Timeshare Explorers.",
   },
 ];
 

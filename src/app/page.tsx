@@ -48,9 +48,9 @@ export default function HomePage() {
 
         <ExperienceIcons /> 
 
-        {/* <VacationersGuide />
+        <VacationersGuide />
 
-        <NewsletterBand /> */}
+        <NewsletterBand />
       </main>
 
       <SiteFooter />

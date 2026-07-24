@@ -54,7 +54,7 @@ export default function SiteHeader() {
             Rent Your Timeshare
           </Link>
           <Link
-            href="#"
+            href="/login"
             className="text-sm font-medium text-ink/75 hover:text-ink transition"
           >
             Owner sign in

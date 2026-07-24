@@ -1,38 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { signIn } from "next-auth/react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
+// Cosmetic sign-in only — there is no real authentication or account system
+// behind this. Submitting the form takes the owner straight to the
+// dashboard. Kept as a form (rather than a plain link) so the page still
+// looks and feels like the Koala-style owner login the client asked for.
 export default function LoginForm() {
   const router = useRouter();
-  const searchParams = useSearchParams();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setError(null);
     setLoading(true);
-
-    const result = await signIn("credentials", {
-      email,
-      password,
-      redirect: false,
-    });
-
-    setLoading(false);
-
-    if (result?.error) {
-      setError("Incorrect email or password. Try again.");
-      return;
-    }
-
-    const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
-    router.push(callbackUrl);
-    router.refresh();
+    router.push("/dashboard");
   }
 
   return (
@@ -68,12 +52,6 @@ export default function LoginForm() {
           placeholder="••••••••"
         />
       </div>
-
-      {error && (
-        <p role="alert" className="text-sm text-clay-dark">
-          {error}
-        </p>
-      )}
 
       <button
         type="submit"

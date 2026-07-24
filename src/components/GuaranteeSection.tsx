@@ -11,7 +11,7 @@ export default function GuaranteeSection() {
     <section className="border-y border-line bg-teal-dark">
       <div className="mx-auto max-w-6xl px-6 py-16">
         <p className="font-body text-sm font-semibold tracking-[0.18em] uppercase text-gold mb-3">
-          The guarantee
+          Full-Service · 90-Day Rental Guarantee
         </p>
         <h2 className="font-display text-3xl text-sand-light mb-2">
           Booked with confidence, every time
