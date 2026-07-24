@@ -38,7 +38,7 @@ export default function NewsletterBand() {
               className="aspect-square w-full object-cover"
             />
           </div>
-          <div className="absolute left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-0 top-10 w-52 sm:w-40 rotate-6 rounded-sm bg-sand-light  shadow-lg">
+          <div className="absolute left-1/2 -translate-x-1/2 sm:translate-x-0 sm:left-10 top-10 w-52 sm:w-60 rotate-6 rounded-sm bg-sand-light  shadow-lg">
             <Image
               width={160}
               height={160}
