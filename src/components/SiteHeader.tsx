@@ -5,27 +5,52 @@ import Link from "next/link";
 import { Search, Menu } from "lucide-react";
 
 export default function SiteHeader() {
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolledPastHero, setScrolledPastHero] = useState(false);
 
   useEffect(() => {
-    function onScroll() {
-      setScrolled(window.scrollY > 8);
-    }
+    let heroHeight = 0;
+
+    const updateHeroHeight = () => {
+      const hero = document.querySelector("#hero");
+      if (hero) {
+        heroHeight = hero.getBoundingClientRect().height;
+      }
+    };
+
+    const onScroll = () => {
+      updateHeroHeight();
+      // Show header when user scrolls past ~90% of hero (smooth feel)
+      setScrolledPastHero(window.scrollY > heroHeight * 0.85);
+    };
+
+    // Initial setup
+    updateHeroHeight();
     onScroll();
+
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("resize", updateHeroHeight);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", updateHeroHeight);
+    };
   }, []);
 
   return (
     <header
-      className={`hidden md-block md-sticky top-0 z-40 w-full bg-sand-light transition-shadow ${
-        scrolled ? "shadow-[0_1px_0_0_var(--color-line)]" : ""
+      className={`hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-sand-light transition-all duration-300 ${
+        scrolledPastHero
+          ? "shadow-[0_1px_0_0_var(--color-line)] opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-2 pointer-events-none"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="font-display text-2xl sm:text-3xl font-semibold text-ink shrink-0">
-          Ash&rsquo;s<span className="text-clay">.</span>
+        <Link
+          href="/"
+          className="font-display text-2xl sm:text-3xl font-semibold text-ink shrink-0"
+        >
+          Koala<span className="text-clay">.</span>
         </Link>
 
         {/* Search pill — desktop only */}
@@ -47,10 +72,16 @@ export default function SiteHeader() {
 
         {/* Nav — desktop only */}
         <nav className="hidden lg:flex items-center gap-6 shrink-0">
-          <Link href="#" className="text-sm font-medium text-ink/75 hover:text-ink transition">
+          <Link
+            href="#"
+            className="text-sm font-medium text-ink/75 hover:text-ink transition"
+          >
             About
           </Link>
-          <Link href="#" className="text-sm font-medium text-ink/75 hover:text-ink transition">
+          <Link
+            href="#"
+            className="text-sm font-medium text-ink/75 hover:text-ink transition"
+          >
             Rent Your Timeshare
           </Link>
           <Link
@@ -67,7 +98,7 @@ export default function SiteHeader() {
           </button>
         </nav>
 
-        {/* Mobile: just the menu button (search + nav collapse into bottom bar / menu) */}
+        {/* Mobile menu button */}
         <button
           className="lg:hidden flex items-center justify-center h-10 w-10 rounded-full border border-line hover:bg-sand transition shrink-0"
           aria-label="Open menu"

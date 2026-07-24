@@ -52,9 +52,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative">
+    <section id="hero" className="relative">   {/* ← Added id="hero" */}
       {/* Full-bleed background video */}
-      <div className="relative h-[70vh] min-h-[440px] max-h-[720px] w-full overflow-hidden">
+      <div className="relative h-[70vh] min-h-[640px] max-h-[820px] w-full overflow-hidden">
         {/* Poster / blurred placeholder — shows instantly, sits under the video */}
         <div
           className="absolute inset-0 h-full w-full bg-cover bg-center"
