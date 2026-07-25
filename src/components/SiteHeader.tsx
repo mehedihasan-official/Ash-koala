@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Search, Menu } from "lucide-react";
+import { useAuth } from "@/components/AuthProvider";
 
 export default function SiteHeader() {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
+  const { user } = useAuth();
 
   useEffect(() => {
     let heroHeight = 0;
@@ -32,6 +34,13 @@ export default function SiteHeader() {
     };
   }, []);
 
+  // Signed-out visitors see "Owner sign in"; once Firebase confirms a
+  // session, that link becomes "Dashboard" and points straight at the
+  // gated owner view (Option B from the client: Dashboard only shows up
+  // after a successful login).
+  const authLabel = user ? "Dashboard" : "Owner sign in";
+  const authHref = user ? "/dashboard" : "/login";
+
   return (
     <>
       {/* 1. Transparent Top Header - Always visible on desktop */}
@@ -53,11 +62,8 @@ export default function SiteHeader() {
             <Link href="#" className="hover:text-white transition">
               Rent Your Timeshare
             </Link>
-            <Link
-              href="/login"
-              className="hover:text-white transition"
-            >
-              Owner sign in
+            <Link href={authHref} className="hover:text-white transition">
+              {authLabel}
             </Link>
 
             <button
@@ -112,8 +118,8 @@ export default function SiteHeader() {
             <Link href="#" className="text-sm font-medium text-ink/75 hover:text-ink transition">
               Rent Your Timeshare
             </Link>
-            <Link href="/login" className="text-sm font-medium text-ink/75 hover:text-ink transition">
-              Owner sign in
+            <Link href={authHref} className="text-sm font-medium text-ink/75 hover:text-ink transition">
+              {authLabel}
             </Link>
             <button
               className="flex items-center justify-center h-10 w-10 rounded-full border border-line hover:bg-sand transition"

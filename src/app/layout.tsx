@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
+import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -34,7 +35,18 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col text-ink">{children}</body>
+      {/* suppressHydrationWarning here only covers this element's own
+          attributes — it does NOT hide mismatches in children. It's
+          needed because some browser extensions (Grammarly, ColorZilla,
+          etc.) inject their own attributes onto <body> right after page
+          load, which otherwise trips React's hydration diff even though
+          nothing in the app actually changed. */}
+      <body
+        className="min-h-full flex flex-col text-ink"
+        suppressHydrationWarning
+      >
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
   );
 }
