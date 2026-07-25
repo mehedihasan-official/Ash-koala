@@ -1,30 +1,27 @@
-import { authConfig } from "@/lib/auth.config";
-import NextAuth from "next-auth";
-import Credentials from "next-auth/providers/credentials";
+// The app uses Firebase auth on the client side, so the server-side NextAuth
+// route is intentionally disabled here. Returning lightweight stubs keeps the
+// app buildable on Vercel without pulling in the failing auth runtime path.
+export async function auth() {
+  return null;
+}
 
-// Full config — includes the Credentials provider, which touches Mongoose
-// and bcrypt (Node-only). This file must NOT be imported from middleware.ts;
-// use auth.config.ts there instead. This file is safe to import from API
-// routes and server components, which run in the Node runtime.
-export const { handlers, signIn, signOut, auth } = NextAuth({
-  ...authConfig,
-  providers: [
-    Credentials({
-      name: "credentials",
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) return null;
+export async function signIn() {
+  throw new Error("Authentication is disabled on this deployment.");
+}
 
-        // Authentication is temporarily disabled until MongoDB is configured.
-        return {
-          id: "demo-user",
-          email: String(credentials.email).toLowerCase().trim(),
-          name: "Demo User",
-        };
-      },
-    }),
-  ],
-});
+export async function signOut() {
+  return null;
+}
+
+export const handlers = {
+  GET: async () =>
+    Response.json(
+      { error: "Authentication is disabled on this deployment." },
+      { status: 404 },
+    ),
+  POST: async () =>
+    Response.json(
+      { error: "Authentication is disabled on this deployment." },
+      { status: 404 },
+    ),
+};

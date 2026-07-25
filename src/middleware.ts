@@ -5,7 +5,8 @@ import { NextResponse } from "next/server";
 // and importing NextAuth in middleware here triggers the openid-client runtime issue
 // under the Edge bundle. Keeping middleware lightweight avoids the crash while
 // preserving the route matcher for future expansion.
-export function middleware(_req: NextRequest) {
+export function middleware(req: NextRequest) {
+  void req;
   return NextResponse.next();
 }
 

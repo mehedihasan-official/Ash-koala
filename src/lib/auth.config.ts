@@ -1,4 +1,4 @@
-import type { NextAuthConfig } from "next-auth";
+import type { AuthOptions } from "next-auth";
 
 /**
  * Edge-safe subset of the auth config — no Mongoose/bcrypt imports here.
@@ -29,4 +29,4 @@ export const authConfig = {
       return session;
     },
   },
-} satisfies NextAuthConfig;
+} satisfies AuthOptions;
