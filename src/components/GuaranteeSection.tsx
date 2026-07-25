@@ -1,9 +1,10 @@
 const rows = [
-  { feature: "Listing verified before it goes live", included: true },
-  { feature: "Direct communication with the owner", included: true },
-  { feature: "Full refund if the resort cancels your stay", included: true },
-  { feature: "Booking confirmation held in escrow until check-in", included: true },
-  { feature: "No hidden service or booking fees", included: true },
+  { feature: "Easy Online Booking", included: true },
+  { feature: "90 Day Rental Guarantee", included: true },
+  { feature: "Verified & Protected Listing Badge", included: true },
+  { feature: "Pricing review & guidance", included: true },
+  { feature: "Professional inquiry management", included: true },
+  { feature: "Dedicated phone support", included: true },
 ];
 
 export default function GuaranteeSection() {
@@ -14,11 +15,10 @@ export default function GuaranteeSection() {
           Full-Service · 90-Day Rental Guarantee
         </p>
         <h2 className="font-display text-3xl text-sand-light mb-2">
-          Booked with confidence, every time
+          FULL-SERVICE · ZERO COST TO YOU
         </h2>
         <p className="text-sand-light/60 mb-10 max-w-xl">
-          Every stay booked through Ash comes with the same protections —
-          no exceptions, no fine print.
+          We handle everything — listing, marketing, booking, guest communication. For Holiday Inn Club Vacations Owners, we guarantee your points rent within 90 days. Zero risk, zero cost upfront — we take 8% ONLY AFTER YOU GET PAID.
         </p>
 
         <div className="rounded-2xl bg-sand-light/5 border border-sand-light/15 divide-y divide-sand-light/10 overflow-hidden">

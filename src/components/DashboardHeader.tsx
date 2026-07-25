@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/AuthProvider";
+import mobileResponsiveLogo from '/logo/mobile-menu-koala-k-logo-vector.svg'
 
 export default function DashboardHeader() {
   const router = useRouter();
@@ -41,10 +42,7 @@ export default function DashboardHeader() {
     <header className="border-b border-line bg-sand-light">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-4">
         <div>
-          <p className="font-display italic text-lg text-teal-dark">Koala</p>
-          <p className="text-xs text-ink/45">
-            {user?.email ?? "Owner dashboard"}
-          </p>
+         <img src="" alt="" />
         </div>
 
         {/* Desktop nav */}
