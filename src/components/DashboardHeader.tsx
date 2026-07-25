@@ -16,7 +16,7 @@ export default function DashboardHeader() {
     <header className="border-b border-line bg-sand-light">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-4">
         <div>
-          <p className="font-display italic text-lg text-teal-dark">Ash&rsquo;s Resorts</p>
+          <p className="font-display italic text-lg text-teal-dark">Koala</p>
           <p className="text-xs text-ink/45">
             {user?.email ?? "Owner dashboard"}
           </p>
