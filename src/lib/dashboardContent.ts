@@ -30,21 +30,7 @@ export const resorts: Resort[] = [
     ],
   },
 
-  {
-    id: "cypress-harbour-5",
-    name: "The Residences at Orange Lake Resort",
-    unitType: "Holiday Inn Club Vacations",
-    location: "Kissimmee, FL 34747",
-    image: "/images/rsort-img6.webp",
-    bookings: [
-      {
-        id: "KL363330",
-        status: "Paid",
-        dateRange: "Jul 19, 2026 - Jul 22, 2026",
-        payoutCents: 579867, // $2,022.16
-      },
-    ],
-  },
+  
 
   {
     id: "cypress-harbour-1",
@@ -75,6 +61,22 @@ export const resorts: Resort[] = [
         status: "Paid",
         dateRange: "Jun 05, 2026 - Jun 12, 2026",
         payoutCents: 393755, // $2,022.16
+      },
+    ],
+  },
+
+  {
+    id: "cypress-harbour-5",
+    name: "The Residences at Orange Lake Resort",
+    unitType: "Holiday Inn Club Vacations",
+    location: "Kissimmee, FL 34747",
+    image: "/images/rsort-img6.webp",
+    bookings: [
+      {
+        id: "KL363330",
+        status: "Paid",
+        dateRange: "Jul 19, 2026 - Jul 22, 2026",
+        payoutCents: 579867, // $2,022.16
       },
     ],
   },
