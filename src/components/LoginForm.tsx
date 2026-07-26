@@ -1,14 +1,14 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { getFirebaseAuth } from "@/lib/firebase";
 import {
+  GoogleAuthProvider,
   signInWithEmailAndPassword,
   signInWithPopup,
-  GoogleAuthProvider,
   type AuthError,
 } from "firebase/auth";
-import { getFirebaseAuth } from "@/lib/firebase";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
 
 const googleProvider = new GoogleAuthProvider();
 
@@ -40,12 +40,14 @@ function friendlyAuthError(error: unknown): string {
 export default function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  // Owner sign-in only redirects back to /dashboard, matching the client's
+  // Owner sign-in only redirects back to /pages/dashboard, matching the client's
   // scope (Option B: Dashboard is a login-only destination). If a
   // callbackUrl was attached (e.g. by the route guard after a redirect),
   // honor it — but only when it points somewhere inside this app.
   const callbackUrl = searchParams.get("callbackUrl");
-  const redirectTo = callbackUrl?.startsWith("/") ? callbackUrl : "/dashboard";
+  const redirectTo = callbackUrl?.startsWith("/")
+    ? callbackUrl
+    : "/pages/dashboard";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +63,11 @@ export default function LoginForm() {
     setEmailLoading(true);
 
     try {
-      await signInWithEmailAndPassword(getFirebaseAuth(), email.trim(), password);
+      await signInWithEmailAndPassword(
+        getFirebaseAuth(),
+        email.trim(),
+        password,
+      );
       router.push(redirectTo);
     } catch (err) {
       setError(friendlyAuthError(err));

@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useAuth } from "@/components/AuthProvider";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useAuth } from "@/components/AuthProvider";
-import mobileResponsiveLogo from '/logo/mobile-menu-koala-k-logo-vector.svg'
+import { useEffect, useRef, useState } from "react";
 
 export default function DashboardHeader() {
   const router = useRouter();
@@ -42,7 +41,11 @@ export default function DashboardHeader() {
     <header className="border-b border-line bg-sand-light">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-4">
         <div>
-         <img src="" alt="" />
+          <img
+            src="/logo/mobile-menu-koala-k-logo-vector.svg"
+            alt="mobile-logo"
+            className="h-8 w-auto"
+          />
         </div>
 
         {/* Desktop nav */}
@@ -54,7 +57,7 @@ export default function DashboardHeader() {
             Home
           </Link>
           <Link
-            href="/dashboard"
+            href="/pages/dashboard"
             className="rounded-lg px-4 py-2 text-sm font-medium text-ink/70 hover:bg-sand transition"
           >
             Dashboard
@@ -109,7 +112,7 @@ export default function DashboardHeader() {
                 Home
               </Link>
               <Link
-                href="/dashboard"
+                href="/pages/dashboard"
                 role="menuitem"
                 onClick={() => setMenuOpen(false)}
                 className="block px-4 py-2 text-sm text-ink/70 hover:bg-sand transition"

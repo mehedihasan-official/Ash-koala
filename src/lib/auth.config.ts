@@ -14,7 +14,7 @@ export const authConfig = {
     "dev-secret-change-me",
   session: { strategy: "jwt" },
   pages: {
-    signIn: "/login",
+    signIn: "/pages/login",
   },
   providers: [], // real providers are added in auth.ts
   callbacks: {

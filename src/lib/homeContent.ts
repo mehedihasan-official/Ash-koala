@@ -1,5 +1,5 @@
 // Placeholder content mirroring the structure of the reference homepage.
-// Swap image paths / copy once Ash provides real resort photos & details.
+// Swap image paths / copy onceKoala provides real resort photos & details.
 
 export interface ListingCard {
   id: string;

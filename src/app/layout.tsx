@@ -1,6 +1,6 @@
+import AuthProvider from "@/components/AuthProvider";
 import type { Metadata } from "next";
 import { Fraunces, Inter } from "next/font/google";
-import AuthProvider from "@/components/AuthProvider";
 import "./globals.css";
 
 const fraunces = Fraunces({
@@ -17,9 +17,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Ash's Resorts — Timeshare Rental Income",
+  title: "Koala's Resorts — Timeshare Rental Income",
   description:
-    "Rent Ash's timeshare resort weeks direct from the owner. Verified, guaranteed, hassle-free.",
+    "RentKoala's timeshare resort weeks direct from the owner. Verified, guaranteed, hassle-free.",
   icons: {
     icon: "/favicon.png",
   },

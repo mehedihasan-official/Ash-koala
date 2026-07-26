@@ -1,9 +1,9 @@
 "use client";
 
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import { Search, Heart, User, LayoutDashboard } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
+import { Heart, LayoutDashboard, Search, User } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 // The third slot switches between "Login" and "Dashboard" depending on
 // auth state (client's Option B: Dashboard is a login-only destination,
@@ -14,8 +14,8 @@ export default function MobileBottomNav() {
   const { user } = useAuth();
 
   const thirdItem = user
-    ? { label: "Dashboard", icon: LayoutDashboard, href: "/dashboard" }
-    : { label: "Login", icon: User, href: "/login" };
+    ? { label: "Dashboard", icon: LayoutDashboard, href: "/pages/dashboard" }
+    : { label: "Login", icon: User, href: "/pages/login" };
 
   const items = [
     { label: "Explore", icon: Search, href: "/" },

@@ -7,7 +7,7 @@ export default function Testimonials({ testimonials }: { testimonials: Testimoni
     <section className="mx-auto max-w-6xl px-6 py-16">
       <h2 className="font-display text-3xl text-teal-dark mb-2">What guests say</h2>
       <p className="text-ink/60 mb-10 max-w-xl">
-        Real feedback from people who&rsquo;ve stayed at one of Ash&rsquo;s resorts.
+        Real feedback from other Holiday Inn Club Vacation owners.
       </p>
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {testimonials.map((t) => (

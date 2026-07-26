@@ -1,21 +1,21 @@
 import DashboardHeader from "@/components/DashboardHeader";
-import ResortStub from "@/components/ResortStub";
-import Testimonials from "@/components/Testimonials";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import RequireAuth from "@/components/RequireAuth";
+import ResortStub from "@/components/ResortStub";
+import Testimonials from "@/components/Testimonials";
 import { resorts, testimonials } from "@/lib/dashboardContent";
 import { formatCents } from "@/lib/types";
 
 export default function DashboardPage() {
   // Flatten resort + booking pairs so each booking renders as its own card,
-  // same as the "All Listings (9)" style summary Ash referenced.
+  // same as the "All Listings (9)" style summaryKoala referenced.
   const allBookings = resorts.flatMap((resort) =>
-    resort.bookings.map((booking) => ({ resort, booking }))
+    resort.bookings.map((booking) => ({ resort, booking })),
   );
 
   const totalPayoutCents = allBookings.reduce(
     (sum, { booking }) => sum + booking.payoutCents,
-    0
+    0,
   );
 
   return (
@@ -32,7 +32,7 @@ export default function DashboardPage() {
               All Listings ({allBookings.length})
             </h1>
             <div className="text-right">
-              <p className="text-sm text-ink/50">Total payouts</p>
+              <p className="text-sm text-ink/50">2026 Total payouts</p>
               <p className="font-display text-3xl text-gold">
                 {formatCents(totalPayoutCents)}
               </p>
@@ -41,12 +41,17 @@ export default function DashboardPage() {
 
           {allBookings.length === 0 ? (
             <p className="text-ink/50 italic">
-              No resorts added yet. Once photos and details come in, they&rsquo;ll show up here.
+              No resorts added yet. Once photos and details come in,
+              they&rsquo;ll show up here.
             </p>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {allBookings.map(({ resort, booking }) => (
-                <ResortStub key={booking.id} resort={resort} booking={booking} />
+                <ResortStub
+                  key={booking.id}
+                  resort={resort}
+                  booking={booking}
+                />
               ))}
             </div>
           )}
@@ -58,7 +63,8 @@ export default function DashboardPage() {
 
         <footer className="border-t border-line">
           <div className="mx-auto max-w-6xl px-6 py-8 text-sm text-ink/50">
-            © {new Date().getFullYear()} Ash&rsquo;s Resorts. Independently owned and operated.
+            © {new Date().getFullYear()} Koala&rsquo;s Resorts. Independently
+            owned and operated.
           </div>
         </footer>
       </main>

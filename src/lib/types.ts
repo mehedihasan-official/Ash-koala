@@ -1,5 +1,5 @@
 // A single reservation/payout for a resort — matches the "KL363332" style
-// booking cards Ash referenced (Ref ID, dates, status, payout amount).
+// booking cardsKoala referenced (Ref ID, dates, status, payout amount).
 export interface Booking {
   id: string; // e.g. "KL363332" — shown as the reference number
   status: "Paid" | "Pending" | "Expired";

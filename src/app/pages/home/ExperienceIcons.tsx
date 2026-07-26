@@ -19,7 +19,7 @@ export default function ExperienceIcons() {
   return (
     <section className="bg-gradient-to-br from-sand-light via-sand to-sand-light py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <p className="text-sm font-semibold text-teal mb-8">The Ash&rsquo;s Experience</p>
+        <p className="text-sm font-semibold text-teal mb-8">TheKoala&rsquo;s Experience</p>
         <div className="grid gap-8 sm:grid-cols-3">
           {points.map(({ icon: Icon, title }) => (
             <div key={title} className="flex flex-col items-start gap-4">

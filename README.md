@@ -1,4 +1,4 @@
-# Ash's Resorts
+#Koala's Resorts
 
 Timeshare rental platform — Koala-style homepage plus a login-gated owner
 dashboard showing resort listings and rental payouts. Built with Next.js 15
@@ -12,10 +12,10 @@ TypeScript data files, ready to swap for a real backend later.
 - **Homepage** (`/`) — a close structural match to the Go‑Koala reference
   layout: sticky header with search pill, hero with search bar, exclusive
   deals carousel, "Timeshare Rentals Made Easy" section, trust/testimonials
-  + press strip, featured stays carousel, featured destinations, upcoming
-  events, experience/trust icons. On mobile, a fixed bottom nav bar
-  replaces the desktop search pill + nav links (see "Dashboard visibility"
-  below for what's in it).
+  - press strip, featured stays carousel, featured destinations, upcoming
+    events, experience/trust icons. On mobile, a fixed bottom nav bar
+    replaces the desktop search pill + nav links (see "Dashboard visibility"
+    below for what's in it).
 - **Login page** (`/login`) — Koala-style owner sign-in, backed by real
   Firebase Authentication. Owners can sign in with email/password or
   "Continue with Google". A signed-in owner who revisits `/login` is
@@ -91,7 +91,7 @@ files directly:
 - **Dashboard testimonials** → same file, `testimonials` array.
 - **Homepage content** (listings, destinations, events, testimonials,
   footer links) → `src/lib/homeContent.ts`.
-- **Resort photos** → `public/images/`. Ash's real Cypress Harbour photos
+- **Resort photos** → `public/images/`.Koala's real Cypress Harbour photos
   are already in place (`rsort-img1.webp` through `rsort-img4.webp`);
   point new `image` fields at additional files dropped into that folder.
 - **Branding** (colors/logo) → `src/app/globals.css` (color tokens at the
@@ -108,7 +108,7 @@ public account system):
   user". Give the owner that email + a password to sign in with.
 - **Google:** no setup needed per-owner — the first time someone signs in
   with "Continue with Google", Firebase creates their account
-  automatically. If you want to restrict *which* Google accounts can reach
+  automatically. If you want to restrict _which_ Google accounts can reach
   the dashboard, that would need to be enforced with a small allow-list
   check (not currently implemented — flag it if you want this added).
 

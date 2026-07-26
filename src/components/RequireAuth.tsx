@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { useAuth } from "@/components/AuthProvider";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 // Gates a page behind Firebase auth. Firebase Auth state lives in the
 // browser (IndexedDB), not in a server-readable cookie by default, so this
@@ -10,14 +10,18 @@ import { useAuth } from "@/components/AuthProvider";
 // is still reporting back on first load, we show a lightweight loading
 // state instead of flashing the protected content or bouncing straight to
 // /login (which would misfire for users who are actually signed in).
-export default function RequireAuth({ children }: { children: React.ReactNode }) {
+export default function RequireAuth({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   const { user, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
     if (!loading && !user) {
-      const loginUrl = new URL("/login", window.location.origin);
-      loginUrl.searchParams.set("callbackUrl", "/dashboard");
+      const loginUrl = new URL("/pages/login", window.location.origin);
+      loginUrl.searchParams.set("callbackUrl", "/pages/dashboard");
       router.replace(`${loginUrl.pathname}${loginUrl.search}`);
     }
   }, [loading, user, router]);

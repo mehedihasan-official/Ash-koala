@@ -41,7 +41,7 @@ async function seed() {
     console.log(`Created admin user: ${ADMIN_EMAIL} / ${ADMIN_PASSWORD}`);
   }
 
-  // --- Sample properties (placeholder — replace with Ash's real resorts/photos) ---
+  // --- Sample properties (placeholder — replace withKoala's real resorts/photos) ---
   const propertyCount = await Property.countDocuments();
   if (propertyCount === 0) {
     await Property.insertMany([
@@ -50,7 +50,7 @@ async function seed() {
         location: "Orlando, FL",
         brand: "Marriott Vacation Club",
         unitType: "2BR Villa, Sleeps 8",
-        description: "Placeholder listing — replace with Ash's real resort details and photos.",
+        description: "Placeholder listing — replace withKoala's real resort details and photos.",
         images: [],
         order: 1,
         payouts: [
@@ -63,7 +63,7 @@ async function seed() {
         location: "Orlando, FL",
         brand: "Hilton Grand Vacations",
         unitType: "1BR Suite, Sleeps 4",
-        description: "Placeholder listing — replace with Ash's real resort details and photos.",
+        description: "Placeholder listing — replace withKoala's real resort details and photos.",
         images: [],
         order: 2,
         payouts: [
@@ -75,7 +75,7 @@ async function seed() {
         location: "Orlando, FL",
         brand: "Club Wyndham",
         unitType: "2BR Deluxe, Sleeps 8",
-        description: "Placeholder listing — replace with Ash's real resort details and photos.",
+        description: "Placeholder listing — replace withKoala's real resort details and photos.",
         images: [],
         order: 3,
         payouts: [
@@ -95,14 +95,14 @@ async function seed() {
       {
         guestName: "Placeholder — Guest Name",
         quote:
-          "Placeholder testimonial text. Replace with real guest reviews once Ash provides them.",
+          "Placeholder testimonial text. Replace with real guest reviews onceKoala provides them.",
         rating: 5,
         order: 1,
       },
       {
         guestName: "Placeholder — Guest Name",
         quote:
-          "Placeholder testimonial text. Replace with real guest reviews once Ash provides them.",
+          "Placeholder testimonial text. Replace with real guest reviews onceKoala provides them.",
         rating: 5,
         order: 2,
       },

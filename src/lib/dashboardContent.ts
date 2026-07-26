@@ -1,6 +1,6 @@
 import type { Resort, Testimonial } from "@/lib/types";
 
-// Ash's actual resort data (from the resort details he provided).
+//Koala's actual resort data (from the resort details he provided).
 // Both listings are Marriott's Cypress Harbour, same dates, two separate
 // bookings/units — matches the reference screenshots exactly.
 //
@@ -24,10 +24,12 @@ export const resorts: Resort[] = [
         id: "KL363332",
         status: "Paid",
         dateRange: "Jun 05, 2026 - Jun 12, 2026",
-        payoutCents: 209944, // $2,099.44
+        payoutCents: 345568 // $2,099.44
       },
     ],
   },
+
+
   {
     id: "cypress-harbour-2",
     name: "Marriott's Cypress Harbour",
@@ -39,20 +41,39 @@ export const resorts: Resort[] = [
         id: "KL363334",
         status: "Paid",
         dateRange: "Jun 05, 2026 - Jun 12, 2026",
-        payoutCents: 202216, // $2,022.16
+        payoutCents: 393755, // $2,022.16
+      },
+    ],
+  },
+
+  {
+    id: "cypress-harbour-3",
+    name: "Westin Princeville Ocean Resort Villas",
+    unitType: "Studio Standard",
+    location: "3838 Wyllie Road, Princeville, HI, 96722",
+    image: "/images/rsort-img4.webp",
+    bookings: [
+      {
+        id: "KL363334",
+        status: "Paid",
+        dateRange: "Aug 09, 2026 - Aug 16, 2026",
+        payoutCents: 273693, // $2,022.16
       },
     ],
   },
 ];
+
+
+
 
 export const testimonials: Testimonial[] = [
   {
     id: "t-1",
     guestName: "Janice M.",
     quote:
-      "The booking was seamless and the villa was even better than the photos. Would rent from Ash again in a heartbeat.",
-    rating: 5,
-    propertyName: "Marriott's Cypress Harbour",
+      "The booking was seamless and the villa was even better than the photos. Would rent fromKoala again in a heartbeat.",
+    rating: 5
+    
   },
   {
     id: "t-2",
@@ -60,7 +81,7 @@ export const testimonials: Testimonial[] = [
     quote:
       "Great communication throughout and the resort amenities were fantastic for our family trip.",
     rating: 5,
-    propertyName: "Marriott's Cypress Harbour",
+    
   },
   {
     id: "t-3",

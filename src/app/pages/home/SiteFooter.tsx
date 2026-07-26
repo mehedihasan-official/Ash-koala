@@ -84,7 +84,7 @@ export default function SiteFooter() {
 
         {/* Legal disclaimer */}
         <p className="text-xs text-ink/40 leading-relaxed mb-6 max-w-3xl">
-          Disclaimer: Ash&rsquo;s Resorts is an independent platform representing
+          Disclaimer:Koala&rsquo;s Resorts is an independent platform representing
           individual timeshare owners and connecting them with travelers. It is
           not affiliated with, endorsed by, sponsored by, or acting on behalf of
           any timeshare developer, resort, vacation club, management company, or
@@ -95,7 +95,7 @@ export default function SiteFooter() {
 
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 border-t border-line/70">
           <p className="text-sm text-ink/50">
-            © {new Date().getFullYear()} Ash&rsquo;s Resorts. All rights reserved. ·{" "}
+            © {new Date().getFullYear()} Koala&rsquo;s Resorts. All rights reserved. ·{" "}
             <a href="#" className="hover:text-teal transition">
               Terms
             </a>{" "}

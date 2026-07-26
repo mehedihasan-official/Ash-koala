@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
-import { Search, Menu } from "lucide-react";
 import { useAuth } from "@/components/AuthProvider";
+import { Menu, Search } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function SiteHeader() {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
@@ -39,7 +39,7 @@ export default function SiteHeader() {
   // gated owner view (Option B from the client: Dashboard only shows up
   // after a successful login).
   const authLabel = user ? "Dashboard" : "Owner sign in";
-  const authHref = user ? "/dashboard" : "/login";
+  const authHref = user ? "/pages/dashboard" : "/pages/login";
 
   return (
     <>
@@ -104,7 +104,9 @@ export default function SiteHeader() {
             <span className="px-5 py-2.5 font-medium text-ink/80 border-r border-line">
               Anytime
             </span>
-            <span className="px-5 py-2.5 font-medium text-ink/50">Add guests</span>
+            <span className="px-5 py-2.5 font-medium text-ink/50">
+              Add guests
+            </span>
             <span className="flex items-center justify-center h-9 w-9 rounded-full bg-teal text-sand-light mr-1.5">
               <Search size={16} strokeWidth={2.5} />
             </span>
@@ -112,13 +114,22 @@ export default function SiteHeader() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-6 shrink-0">
-            <Link href="#" className="text-sm font-medium text-ink/75 hover:text-ink transition">
+            <Link
+              href="#"
+              className="text-sm font-medium text-ink/75 hover:text-ink transition"
+            >
               About
             </Link>
-            <Link href="#" className="text-sm font-medium text-ink/75 hover:text-ink transition">
+            <Link
+              href="#"
+              className="text-sm font-medium text-ink/75 hover:text-ink transition"
+            >
               Rent Your Timeshare
             </Link>
-            <Link href={authHref} className="text-sm font-medium text-ink/75 hover:text-ink transition">
+            <Link
+              href={authHref}
+              className="text-sm font-medium text-ink/75 hover:text-ink transition"
+            >
               {authLabel}
             </Link>
             <button
