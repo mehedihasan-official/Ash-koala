@@ -17,7 +17,7 @@ export const resorts: Resort[] = [
   {
     id: "cypress-harbour-4",
     name: "Holiday Inn Club Vacations Orange Lake Resort",
-    unitType: "Clubhouse Studio",
+    unitType: "3 Bd villa",
     location: "Orlando, Florida",
     image: "/images/rsort-img5.webp",
     bookings: [
