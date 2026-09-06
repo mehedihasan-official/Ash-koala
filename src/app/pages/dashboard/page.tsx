@@ -1,61 +1,29 @@
+import DashboardClient from "@/components/DashboardClient";
 import DashboardHeader from "@/components/DashboardHeader";
 import GuaranteeSection from "@/components/GuaranteeSection";
 import RequireAuth from "@/components/RequireAuth";
-import ResortStub from "@/components/ResortStub";
 import Testimonials from "@/components/Testimonials";
-import { resorts, testimonials } from "@/lib/dashboardContent";
-import { formatCents } from "@/lib/types";
+import { testimonials } from "@/lib/dashboardContent";
+import { Suspense } from "react";
 
+// Server shell. The payouts section reads the selected year from the URL
+// (?year=2025) via useSearchParams, which Next requires to sit inside a
+// Suspense boundary, so it lives in DashboardClient.
 export default function DashboardPage() {
-  // Flatten resort + booking pairs so each booking renders as its own card,
-  // same as the "All Listings (9)" style summaryKoala referenced.
-  const allBookings = resorts.flatMap((resort) =>
-    resort.bookings.map((booking) => ({ resort, booking })),
-  );
-
-  const totalPayoutCents = allBookings.reduce(
-    (sum, { booking }) => sum + booking.payoutCents,
-    0,
-  );
-
   return (
     <RequireAuth>
       <main className="flex-1">
         <DashboardHeader />
 
-        <section className="mx-auto max-w-6xl px-6 py-12">
-          <p className="text-sm font-semibold tracking-[0.14em] uppercase text-clay-dark mb-2">
-            Your resorts
-          </p>
-          <div className="flex flex-wrap items-end justify-between gap-6 mb-10">
-            <h1 className="font-display text-4xl text-teal-dark">
-              All Listings ({allBookings.length})
-            </h1>
-            <div className="text-right">
-              <p className="text-sm text-ink/50">2026 Total payouts</p>
-              <p className="font-display text-3xl text-gold">
-                {formatCents(totalPayoutCents)}
-              </p>
-            </div>
-          </div>
-
-          {allBookings.length === 0 ? (
-            <p className="text-ink/50 italic">
-              No resorts added yet. Once photos and details come in,
-              they&rsquo;ll show up here.
-            </p>
-          ) : (
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {allBookings.map(({ resort, booking }) => (
-                <ResortStub
-                  key={booking.id}
-                  resort={resort}
-                  booking={booking}
-                />
-              ))}
-            </div>
-          )}
-        </section>
+        <Suspense
+          fallback={
+            <section className="mx-auto max-w-6xl px-6 py-12">
+              <p className="text-sm text-ink/40">Loading your payouts…</p>
+            </section>
+          }
+        >
+          <DashboardClient />
+        </Suspense>
 
         <GuaranteeSection />
 
