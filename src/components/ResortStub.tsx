@@ -2,10 +2,15 @@ import Image from "next/image";
 import type { Resort, Booking } from "@/lib/types";
 import { formatCents } from "@/lib/types";
 
+// Status pills sit on top of the resort photo, so each one is a solid fill
+// rather than a translucent tint — a 10%-opacity chip disappears against a
+// bright pool or sky. "Paid" uses the evergreen-tree green Ash asked for
+// (--color-pine in globals.css); the other two keep their palette colours in
+// the same solid treatment so the set reads as one family.
 const statusStyles: Record<Booking["status"], string> = {
-  Paid: "bg-teal/10 text-teal-dark",
-  Pending: "bg-gold/20 text-gold",
-  Expired: "bg-ink/5 text-ink/45",
+  Paid: "bg-gray-100 text-green-500 ring-pine-dark/40",
+  Pending: "bg-gold text-white ring-gold/50",
+  Expired: "bg-ink/55 text-white ring-ink/30",
 };
 
 // One card per booking — matches the reference screenshots where each
@@ -29,7 +34,7 @@ export default function ResortStub({
           className="object-cover"
         />
         <span
-          className={`absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-semibold ${statusStyles[booking.status]}`}
+          className={`absolute top-3 right-3 rounded-full px-3 py-1 text-xs font-semibold ring-1 ${statusStyles[booking.status]}`}
         >
           {booking.status}
         </span>

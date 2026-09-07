@@ -11,6 +11,8 @@
   --color-clay-dark: #d16b45;
   --color-gold: #c9a15c;      /* payout / income highlight */
   --color-line: #ddd4c2;      /* hairline borders on sand */
+  --color-pine: #2f6b46;      /* booking status "Paid" — evergreen-tree green */
+  --color-pine-dark: #245437; /* deeper pine, used for the badge hairline */
 }
 
 @theme inline {
@@ -23,6 +25,8 @@
   --color-clay-dark: var(--color-clay-dark);
   --color-gold: var(--color-gold);
   --color-line: var(--color-line);
+  --color-pine: var(--color-pine);
+  --color-pine-dark: var(--color-pine-dark);
   --font-display: var(--font-display);
   --font-body: var(--font-body);
 }
