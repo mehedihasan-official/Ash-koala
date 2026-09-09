@@ -132,6 +132,23 @@ export const resorts: Resort[] = [
       },
     ],
   },
+
+  {
+  id: "disneys-animal-kingdom-villas-jambo-house-2bd",
+  name: "Disney's Animal Kingdom Villas at Jambo House",
+  unitType: "2 Bedroom",
+  location: "2901 Osceola Parkway, Lake Buena Vista, FL, 32830",
+  image: "/images/disney-animal-kingdom.jpg", // placeholder — set to your local asset filename
+  bookings: [
+    {
+      id: "KLXXXXXX", // Ash didn't give a booking ID — fill in once you have it
+      status: "Paid", // assumed to match your existing entries — confirm with Ash
+      dateRange: "Oct 24, 2025 - Oct 31, 2025",
+      year: 2025,
+      payoutCents: 464755, // $4,647.55
+    },
+  ],
+},
 ];
 
 // --- Derived helpers -------------------------------------------------------
