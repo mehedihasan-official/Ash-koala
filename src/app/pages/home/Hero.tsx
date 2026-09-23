@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 const HERO_POSTER_URL =
   "https://koalaadmin-prod.s3.us-east-2.amazonaws.com/assets/Koala-homepageloading-blur-compressed.png";
-const HERO_VIDEO_URL = "/videos/hero-video.mp4";
+const HERO_VIDEO_URL = "/videos/hero-video-23-9-26.mp4";
 
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
