@@ -1,6 +1,6 @@
 "use client";
 
-import { Calendar, MapPin, Search, Users } from "lucide-react";
+import { ArrowRight, ChevronDown, Search } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const HERO_POSTER_URL =
@@ -10,7 +10,6 @@ const HERO_VIDEO_URL = "/videos/hero-video-23-9-26.mp4";
 export default function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const [videoError, setVideoError] = useState<string | null>(null);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -20,21 +19,7 @@ export default function Hero() {
       setVideoLoaded(true);
       try {
         await video.play();
-        setVideoError(null);
-      } catch (err) {
-        const message =
-          err instanceof Error ? err.message : "Unknown autoplay error";
-        setVideoError(`Autoplay blocked: ${message}`);
-      }
-    };
-
-    const handleError = () => {
-      const err = video.error;
-      setVideoError(
-        err
-          ? `Video failed to load (code ${err.code}): ${err.message}`
-          : "Video failed to load",
-      );
+      } catch {}
     };
 
     if (video.readyState >= 2) {
@@ -43,18 +28,14 @@ export default function Hero() {
       video.addEventListener("canplay", handleCanPlay);
     }
 
-    video.addEventListener("error", handleError);
-
     return () => {
       video.removeEventListener("canplay", handleCanPlay);
-      video.removeEventListener("error", handleError);
     };
   }, []);
 
   return (
-    <section id="hero" className="relative">   {/* ← Added id="hero" */}
-      {/* Full-bleed background video */}
-      <div className="relative h-[70vh] min-h-[640px] max-h-[820px] w-full overflow-hidden">
+    <section id="hero" className="relative">
+      <div className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
         {/* Poster / blurred placeholder — shows instantly, sits under the video */}
         <div
           className="absolute inset-0 h-full w-full bg-cover bg-center"
@@ -78,98 +59,57 @@ export default function Hero() {
           <source src={HERO_VIDEO_URL} type="video/mp4" />
         </video>
 
-        {/* TEMP DEBUG — remove once video is confirmed working */}
-        {videoError && (
-          <div className="absolute top-2 left-2 z-50 rounded bg-red-600 px-3 py-1.5 text-xs text-white max-w-xs">
-            {videoError}
-          </div>
-        )}
+        <div className="absolute inset-0 bg-ink/15" />
 
-        <div className="absolute inset-0 bg-gradient-to-b from-ink/50 via-ink/25 to-ink/40" />
+        <button className="absolute right-6 top-7 z-20 rounded-full border border-ink/60 bg-sand-light px-5 py-3 text-[15px] font-medium text-ink shadow-sm md:hidden">
+          Rent your timeshare
+        </button>
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-center px-4 sm:px-6 text-center">
-          <h1 className="reveal font-display text-4xl sm:text-5xl md:text-6xl leading-[1.08] text-sand-light max-w-3xl">
-            Timeshare Rentals
-            <br />
-            Made Easy
+        <div className="relative z-10 flex h-full flex-col items-center px-4 pt-[46vh] text-center md:pt-[29vh]">
+          <h1 className="reveal max-w-[850px] font-display text-[31px] leading-[1.15] text-sand-light sm:text-4xl md:text-[42px]">
+            Rent the timeshare. Skip the sales pitch.
           </h1>
-          <p
-            className="reveal mt-4 max-w-md text-sm sm:text-base text-sand-light/90"
-            style={{ animationDelay: "80ms" }}
-          >
-            Rent directly from timeshare owners at a fraction of the
-            resort&rsquo;s price
-          </p>
 
-          {/* Search bar — single pill on all breakpoints, fields collapse to one on mobile */}
           <div
-            className="reveal mt-8 w-full max-w-md sm:max-w-2xl rounded-full bg-sand-light shadow-lg p-1.5 flex items-center gap-0"
+            className="reveal mt-7 flex min-h-[72px] w-full max-w-[375px] items-center rounded-full border border-ink/70 bg-sand-light p-2 shadow-lg md:mt-9 md:max-w-[890px] md:min-h-0 md:p-1.5"
             style={{ animationDelay: "150ms" }}
           >
-            {/* Mobile: single "Start your search" field */}
-            <button className="sm:hidden flex-1 text-left px-5 py-3 text-[15px] font-medium text-ink/80">
+            <button className="flex-1 px-5 py-3 text-left text-[17px] font-medium text-ink/85 md:hidden">
               Start your search
             </button>
 
-            {/* Desktop: Where / When / Who fields with dividers */}
-            <label className="hidden sm:flex flex-1 items-center gap-2.5 rounded-full px-5 py-2.5 hover:bg-sand transition text-left cursor-pointer">
-              <MapPin size={16} className="text-teal shrink-0" />
-              <span className="min-w-0">
-                <span className="block text-[11px] font-semibold text-ink/50">
-                  Where
-                </span>
-                <span className="block text-sm text-ink/70 truncate">
-                  Search destinations
-                </span>
-              </span>
-            </label>
-            <div className="hidden sm:block w-px h-8 bg-line" />
-            <label className="hidden sm:flex flex-1 items-center gap-2.5 rounded-full px-5 py-2.5 hover:bg-sand transition text-left cursor-pointer">
-              <Calendar size={16} className="text-teal shrink-0" />
-              <span className="min-w-0">
-                <span className="block text-[11px] font-semibold text-ink/50">
-                  When
-                </span>
-                <span className="block text-sm text-ink/70 truncate">
-                  Add dates
-                </span>
-              </span>
-            </label>
-            <div className="hidden sm:block w-px h-8 bg-line" />
-            <label className="hidden sm:flex flex-1 items-center gap-2.5 rounded-full px-5 py-2.5 hover:bg-sand transition text-left cursor-pointer">
-              <Users size={16} className="text-teal shrink-0" />
-              <span className="min-w-0">
-                <span className="block text-[11px] font-semibold text-ink/50">
-                  Who
-                </span>
-                <span className="block text-sm text-ink/70 truncate">
-                  Add guests
-                </span>
-              </span>
-            </label>
+            <button className="hidden flex-1 items-center justify-between border-r border-ink/60 px-5 py-2 text-left text-[17px] text-ink/80 md:flex">
+              Where will you go?
+              <ChevronDown size={18} />
+            </button>
+            <button className="hidden flex-1 items-center justify-between border-r border-ink/60 px-5 py-2 text-left text-[17px] text-ink/80 md:flex">
+              Add dates
+              <ChevronDown size={18} />
+            </button>
+            <button className="hidden flex-1 items-center justify-between px-5 py-2 text-left text-[17px] text-ink/80 md:flex">
+              Add guests
+              <ChevronDown size={18} />
+            </button>
 
             <button
-              className="flex items-center justify-center rounded-full bg-gradient-to-b from-teal to-teal-dark text-sand-light h-11 w-11 sm:h-12 sm:w-12 shrink-0 hover:brightness-110 transition"
+              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full border border-ink/60 bg-[#c7e0e7] text-ink transition hover:brightness-105 md:h-12 md:w-12"
               aria-label="Search"
             >
-              <Search size={18} strokeWidth={2.5} />
+              <Search size={24} strokeWidth={2} />
             </button>
           </div>
 
-          <p
-            className="reveal mt-4 text-sm text-sand-light/80"
+          <button
+            className="reveal mt-7 inline-flex items-center gap-1.5 rounded-full border border-ink/70 bg-sand-light px-5 py-2.5 text-sm font-semibold text-ink shadow-sm transition hover:bg-white md:mt-4"
             style={{ animationDelay: "190ms" }}
           >
-            or
-          </p>
-
-          <button
-            className="reveal mt-4 inline-flex items-center gap-1.5 rounded-full border border-sand-light/40 bg-sand-light/10 backdrop-blur-sm px-5 py-2.5 text-sm font-semibold text-sand-light hover:bg-sand-light/20 transition"
-            style={{ animationDelay: "220ms" }}
-          >
-            <span aria-hidden>🔥</span>
-            Browse Best Deals
+            Browse best deals
+            <ArrowRight size={21} strokeWidth={1.8} />
           </button>
+
+          <div className="reveal absolute bottom-[42px] left-5 text-left font-body text-[128px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[160px] md:bottom-16 md:left-14 md:text-[205px]">
+            Koala.
+          </div>
         </div>
       </div>
     </section>

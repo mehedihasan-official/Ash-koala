@@ -45,32 +45,25 @@ export default function SiteHeader() {
     <>
       {/* 1. Transparent Top Header - Always visible on desktop */}
       <header className="hidden md:block fixed top-0 left-0 right-0 z-50 w-full bg-transparent transition-all duration-300">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="font-display text-3xl font-semibold text-sand-light drop-shadow-sm"
-          >
-            Koala<span className="text-clay">.</span>
-          </Link>
-
-          {/* Right side nav */}
-          <nav className="flex items-center gap-6 text-sm text-sand-light">
-            <Link href="#" className="hover:text-white transition">
+        <div className="flex h-16 items-center justify-end px-4 sm:h-20 sm:px-12">
+          <nav className="flex items-center gap-3 text-sm text-ink">
+            <Link
+              href="#"
+              className="rounded-full border border-ink/60 bg-sand-light px-5 py-3 transition hover:bg-white"
+            >
               About
             </Link>
-            <Link href="#" className="hover:text-white transition">
-              Rent Your Timeshare
+            <Link
+              href="#"
+              className="rounded-full border border-ink/60 bg-sand-light px-5 py-3 transition hover:bg-white"
+            >
+              Rent your timeshare
             </Link>
-            <Link href={authHref} className="hover:text-white transition">
-              {authLabel}
-            </Link>
-
             <button
-              className="flex h-9 w-9 items-center justify-center rounded-full hover:bg-white/10 transition"
+              className="flex h-12 w-12 items-center justify-center rounded-full border border-ink/60 bg-sand-light transition hover:bg-white"
               aria-label="Open menu"
             >
-              <Menu size={20} />
+              <Menu size={21} />
             </button>
           </nav>
         </div>
