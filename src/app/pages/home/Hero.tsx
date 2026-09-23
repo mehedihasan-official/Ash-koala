@@ -107,7 +107,7 @@ export default function Hero() {
             <ArrowRight size={21} strokeWidth={1.8} />
           </button>
 
-          <div className="reveal absolute bottom-3 left-3 text-left font-body text-[146px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[160px] md:bottom-16 md:left-14 md:text-[205px]">
+          <div className="reveal absolute bottom-3 left-3 text-left font-body text-[130px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[150px] md:bottom-16 md:left-14 md:text-[205px]">
             Koala.
           </div>
         </div>
