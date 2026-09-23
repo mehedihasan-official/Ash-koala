@@ -35,7 +35,7 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative">
-      <div className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
+      <div className="relative h-[calc(100svh-78px)] min-h-[650px] w-full overflow-hidden md:h-[100svh] md:min-h-[640px]">
         {/* Poster / blurred placeholder — shows instantly, sits under the video */}
         <div
           className="absolute inset-0 h-full w-full bg-cover bg-center"
@@ -107,7 +107,7 @@ export default function Hero() {
             <ArrowRight size={21} strokeWidth={1.8} />
           </button>
 
-          <div className="reveal absolute bottom-5 left-5 text-left font-body text-[128px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[160px] md:bottom-16 md:left-14 md:text-[205px]">
+          <div className="reveal absolute bottom-3 left-3 text-left font-body text-[146px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[160px] md:bottom-16 md:left-14 md:text-[205px]">
             Koala.
           </div>
         </div>
