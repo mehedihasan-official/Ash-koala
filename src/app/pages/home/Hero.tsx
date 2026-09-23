@@ -65,7 +65,7 @@ export default function Hero() {
           Rent your timeshare
         </button>
 
-        <div className="relative z-10 flex h-full flex-col items-center px-4 pt-[42vh] text-center md:pt-[29vh]">
+        <div className="relative z-10 flex h-full flex-col items-center px-4 pt-[36vh] text-center md:pt-[29vh]">
           <h1 className="reveal max-w-[850px] font-display text-[31px] leading-[1.15] text-sand-light sm:text-4xl md:text-[42px]">
             Rent the timeshare. Skip the sales pitch.
           </h1>
@@ -107,7 +107,7 @@ export default function Hero() {
             <ArrowRight size={21} strokeWidth={1.8} />
           </button>
 
-          <div className="reveal absolute -bottom-8 left-5 text-left font-body text-[128px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[160px] md:bottom-16 md:left-14 md:text-[205px]">
+          <div className="reveal absolute bottom-5 left-5 text-left font-body text-[128px] font-bold leading-[0.8] tracking-[-0.08em] text-white sm:bottom-5 sm:left-10 sm:text-[160px] md:bottom-16 md:left-14 md:text-[205px]">
             Koala.
           </div>
         </div>
