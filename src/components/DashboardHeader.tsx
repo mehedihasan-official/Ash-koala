@@ -1,13 +1,14 @@
 "use client";
 
 import { useAuth } from "@/components/AuthProvider";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 export default function DashboardHeader() {
   const router = useRouter();
-  const { user, signOut } = useAuth();
+  const { signOut } = useAuth();
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -41,9 +42,12 @@ export default function DashboardHeader() {
     <header className="border-b border-line bg-sand-light">
       <div className="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between gap-4">
         <div>
-          <img
+          <Image
             src="/logo/mobile-menu-koala-k-logo-vector.svg"
-            alt="mobile-logo"
+            alt="Koala"
+            width={366}
+            height={488}
+            priority
             className="h-8 w-auto"
           />
         </div>

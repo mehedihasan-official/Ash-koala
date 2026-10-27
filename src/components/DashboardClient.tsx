@@ -217,7 +217,7 @@ function YearSelect({
         <ul
           role="listbox"
           aria-label="Select payout year"
-          className="absolute right-0 top-full z-50 mt-2 min-w-[7rem] rounded-xl border border-line bg-sand-light py-1 shadow-lg"
+          className="absolute left-0 top-full z-50 mt-2 min-w-[7rem] rounded-xl border border-line bg-sand-light py-1 shadow-lg sm:left-auto sm:right-0"
         >
           {years.map((year, index) => {
             const isSelected = year === selectedYear;

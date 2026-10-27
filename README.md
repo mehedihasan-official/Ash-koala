@@ -16,15 +16,17 @@ TypeScript data files, ready to swap for a real backend later.
     events, experience/trust icons. On mobile, a fixed bottom nav bar
     replaces the desktop search pill + nav links (see "Dashboard visibility"
     below for what's in it).
-- **Login page** (`/login`) — Koala-style owner sign-in, backed by real
+- **Login page** (`/pages/login`) — Koala-style owner sign-in, backed by real
   Firebase Authentication. Owners can sign in with email/password or
-  "Continue with Google". A signed-in owner who revisits `/login` is
-  redirected straight to `/dashboard`.
-- **Dashboard** (`/dashboard`) — gated behind Firebase Auth. Signed-out
-  visitors are redirected to `/login` (with a `callbackUrl` back to
-  `/dashboard`); once signed in they land on their resort listings. Shows
+  "Continue with Google". A signed-in owner who revisits `/pages/login` is
+  redirected straight to `/pages/dashboard`.
+- **Dashboard** (`/pages/dashboard`) — gated behind Firebase Auth. Signed-out
+  visitors are redirected to `/pages/login` (with a `callbackUrl` back to
+  `/pages/dashboard`); once signed in they land on their resort listings. Shows
   every resort booking as its own card (reference number, dates, status,
-  payout), a "Full-Service · 90-Day Rental Guarantee" section, and guest
+  payout), a pricing section (member-story banner with resort search and
+  browse shortcuts, then the Do-It-Yourself vs Full-Service plan table —
+  `src/components/PricingHero.tsx` and `PricingTable.tsx`), a "Full-Service · 90-Day Rental Guarantee" section, and guest
   testimonials.
 
 ## Dashboard visibility (client-requested behavior)
@@ -34,13 +36,13 @@ appear in navigation until the owner signs in:
 
 - **Signed out:** desktop nav shows "Owner sign in"; the mobile bottom bar
   shows Explore / Wishlist / Login.
-- **Signed in:** desktop nav shows "Dashboard" (linking to `/dashboard`
-  instead of `/login`); the mobile bottom bar shows Explore / Wishlist /
+- **Signed in:** desktop nav shows "Dashboard" (linking to `/pages/dashboard`
+  instead of `/pages/login`); the mobile bottom bar shows Explore / Wishlist /
   **Dashboard**, with Dashboard sitting in the same slot beside Wishlist.
 
 This is enforced two ways: the nav items themselves only render the
 Dashboard link/label once Firebase confirms a signed-in user, and the
-`/dashboard` route itself is guarded (see `src/components/RequireAuth.tsx`)
+`/pages/dashboard` route itself is guarded (see `src/components/RequireAuth.tsx`)
 so it can't be reached directly by a signed-out visitor either.
 
 Out of scope for this phase: booking engine, payment processing,
@@ -70,9 +72,9 @@ intentionally not wired up yet — see "Notes for future phases").
 3. Visit `http://localhost:3000`.
 
 Without a valid `.env.local`, the homepage still renders fine, but
-`/login` will fail to sign anyone in (Firebase will throw an
-`auth/invalid-api-key` error) and `/dashboard` will keep redirecting back
-to `/login` since no one can ever get authenticated.
+`/pages/login` will fail to sign anyone in (Firebase will throw an
+`auth/invalid-api-key` error) and `/pages/dashboard` will keep redirecting back
+to `/pages/login` since no one can ever get authenticated.
 
 ## Updating content
 
@@ -82,7 +84,7 @@ files directly:
 - **Dashboard listings & payouts** → `src/lib/dashboardContent.ts`. Each
   resort has a `bookings` array; each booking gets its own reference
   number, status (`Paid` / `Pending` / `Expired`), date range, and payout
-  amount, and renders as its own card on `/dashboard`. Scoped for 3–4
+  amount, and renders as its own card on `/pages/dashboard`. Scoped for 3–4
   resorts — currently 2 real bookings are in place (Marriott's Cypress
   Harbour ×2); the grid and totals already scale to 3 or 4 without code
   changes, and `rsort-img3.webp` / `rsort-img4.webp` are sitting in
@@ -139,6 +141,7 @@ src/
     LoginForm.tsx                 # Firebase email/password + Google sign-in form
     DashboardHeader.tsx           # Shows signed-in owner's email + real sign-out
     ResortStub.tsx                 # One card per booking (dashboard)
+    PricingHero.tsx                # Member banner + search + browse links (top of pricing section)
     Testimonials.tsx
     GuaranteeSection.tsx
   lib/

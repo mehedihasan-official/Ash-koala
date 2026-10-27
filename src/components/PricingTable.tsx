@@ -1,5 +1,6 @@
 "use client";
 
+import PricingHero from "@/components/PricingHero";
 import { Check, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -99,6 +100,9 @@ export default function PricingTable() {
       aria-labelledby="pricing-heading"
       className="overflow-x-clip border-t border-line bg-sand-light"
     >
+      {/* Member story banner + resort search + browse shortcuts */}
+      <PricingHero />
+
       <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
         <h2
           id="pricing-heading"
