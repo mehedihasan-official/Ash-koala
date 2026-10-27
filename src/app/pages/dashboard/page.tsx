@@ -1,6 +1,7 @@
 import DashboardClient from "@/components/DashboardClient";
 import DashboardHeader from "@/components/DashboardHeader";
 import GuaranteeSection from "@/components/GuaranteeSection";
+import PricingTable from "@/components/PricingTable";
 import RequireAuth from "@/components/RequireAuth";
 import Testimonials from "@/components/Testimonials";
 import { testimonials } from "@/lib/dashboardContent";
@@ -24,6 +25,8 @@ export default function DashboardPage() {
         >
           <DashboardClient />
         </Suspense>
+
+        <PricingTable />
 
         <GuaranteeSection />
 
